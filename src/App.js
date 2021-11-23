@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+// A search bar to search for dog breeds
+// A favorites list of pupps
+
+function App({ theme }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div style={theme.app}>
+      <header style={theme.header}>
+        <h1>Lookin At Some Cute Pupps</h1>
       </header>
+
+      <div class="left-sidebar left-content">
+        <h2>Stuff To Do Here</h2>
+        <input placeholder="Search for a dog breed..." />
+        <button>Random Pupp!</button>
+      </div>
+
+      <main>I am body!!</main>
+
+      <div class="right-sidebar">Favorite Pupps</div>
+
+      <footer>
+        Powered by{" "}
+        <a target="_new" href="https://dog.ceo/dog-api/documentation/">
+          Dog API.
+        </a>
+      </footer>
     </div>
   );
 }
