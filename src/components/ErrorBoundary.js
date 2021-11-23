@@ -12,8 +12,11 @@ export default class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    if (this.state.hasError && !this.props.message) {
       return <>Something has gone terribly wrong D:</>;
+    }
+    if (this.state.hasError && this.props.message) {
+      return <>{this.props.message}</>;
     }
     return this.props.children;
   }

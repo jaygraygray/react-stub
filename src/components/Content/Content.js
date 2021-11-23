@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
+
 import { getSinglePup } from "../../api/config";
 
 // will need to display one random pup img
 // or grid of many pups
+const Image = lazy(async () => await import("../ui/Image"));
 
 export const Content = () => {
   const [puppyPayload, setPuppyPayload] = useState({});
@@ -15,7 +17,10 @@ export const Content = () => {
       <div onClick={() => getSinglePup({ cb: setPuppyPayload })}>
         Show me another!
       </div>
-      <img src={puppyPayload.imageUrl} alt="A lovely puppy!" />
+      {/* <Image src={puppyPayload.imageUrl} /> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Image src={puppyPayload.imageUrl} />
+      </Suspense>
     </>
   );
 };

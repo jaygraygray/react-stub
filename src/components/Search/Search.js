@@ -3,10 +3,9 @@ import "./style.css";
 import { SearchResults } from "./components";
 import { getAllPups } from "../../api/config";
 
-export const Search = (props) => {
+export const Search = () => {
   const [pups, setPups] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const inputRef = useRef(null);
   const [focus, setFocus] = useState(false);
 
   const handleGetAllPups = () => getAllPups({ cb: setPups });
@@ -32,7 +31,6 @@ export const Search = (props) => {
         placeholder="Search for a dog breed..."
         onClick={handleGetAllPups}
         onChange={handleSearchForPup}
-        ref={inputRef}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
