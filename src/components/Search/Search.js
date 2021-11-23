@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
+import "./style.css";
+import { SearchResults } from "./components";
 import { getAllPups } from "../../api/config";
 
 export const Search = () => {
@@ -11,7 +13,7 @@ export const Search = () => {
 
   const handleSearchForPup = React.useCallback(
     (e) => {
-      if (e.target && e.target.value.length >= 3 && pups.length !== 0) {
+      if (e.target && e.target.value.length >= 2 && pups.length !== 0) {
         setSearchValue(e.target.value);
       }
     },
@@ -20,16 +22,12 @@ export const Search = () => {
 
   useEffect(() => {
     if (!focus) {
-      handleSearchForPup("");
+      setSearchValue("");
     }
   }, [focus, handleSearchForPup]);
 
   return (
-    <div
-      style={{
-        position: "relative",
-      }}
-    >
+    <div className="container">
       <input
         placeholder="Search for a dog breed..."
         onClick={handleGetAllPups}
@@ -38,39 +36,11 @@ export const Search = () => {
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
-      <div
-        style={{
-          position: "absolute",
-          top: 25,
-          left: 10,
-        }}
-      >
+      <div className="results-positioner">
         <SearchResults searchValue={searchValue} display={focus}>
           {pups}
         </SearchResults>
       </div>
     </div>
   );
-};
-
-const SearchResults = (props) => {
-  const { children, searchValue, display } = props;
-  return display && children ? (
-    <div
-      style={{
-        maxHeight: "150px",
-        overflowY: "auto",
-        background: "white",
-      }}
-    >
-      {children.map((i) =>
-        i.includes(searchValue) ? <SearchItem>{i}</SearchItem> : null
-      )}
-    </div>
-  ) : null;
-};
-
-const SearchItem = (props) => {
-  const { children } = props;
-  return <div>{children}</div>;
 };

@@ -3,7 +3,8 @@
 ### Concepts Demonstrated
 
 - [ ] Responsive / mobile friendly UI
-- [ ] Data fetching
+- [x] Data fetching
+  - `src/api`
 - [x] Higher Order Component
   - `src/ThemedApp.js`
 - [ ] Render props
