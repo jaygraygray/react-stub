@@ -32,6 +32,7 @@ const theme = Object.freeze({
   },
   leftSideBar: {
     display: "flex",
+    flexDirection: "column",
     gridColumn: "1 / 2",
     background: colors.background.leftSideBar,
     minWidth: "200px",

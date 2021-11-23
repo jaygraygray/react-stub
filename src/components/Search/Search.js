@@ -8,9 +8,12 @@ export const Search = () => {
 
   console.log(">> pups", pups);
   return (
-    <input
-      placeholder="Search for a dog breed..."
-      onMouseOver={handleGetAllPups}
-    />
+    <>
+      <input
+        placeholder="Search for a dog breed..."
+        onMouseOver={handleGetAllPups}
+      />
+      <button> Find! </button>
+    </>
   );
 };
