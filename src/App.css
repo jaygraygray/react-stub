@@ -1,18 +1,4 @@
-.left-sidebar {
-  background: lightblue;
-  grid-column: 1 / 2;
-}
-
-.left-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.left-content * {
-  margin-bottom: 50px;
-}
-
-main {
+/* main {
   background: coral;
   grid-column: 2 / 3;
 }
@@ -27,13 +13,13 @@ footer {
   padding: 2rem;
   text-align: center;
   grid-column: 1 / 4;
-}
+} */
 
-.left-sidebar {
+/* .left-sidebar {
   min-width: 200px;
 }
 
 .left-sidebar,
 .right-sidebar {
   padding: 1rem;
-}
+} */

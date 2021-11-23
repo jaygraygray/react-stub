@@ -10,17 +10,19 @@ function App({ theme }) {
         <h1>Lookin At Some Cute Pupps</h1>
       </header>
 
-      <div class="left-sidebar left-content">
-        <h2>Stuff To Do Here</h2>
-        <input placeholder="Search for a dog breed..." />
-        <button>Random Pupp!</button>
+      <div style={theme.leftSideBar}>
+        <div>
+          <h2>Stuff To Do Here</h2>
+          <input placeholder="Search for a dog breed..." />
+          <button>Random Pupp!</button>
+        </div>
       </div>
 
-      <main>I am body!!</main>
+      <main style={theme.main}>I am body!!</main>
 
-      <div class="right-sidebar">Favorite Pupps</div>
+      <div style={theme.rightSideBar}>Favorite Pupps</div>
 
-      <footer>
+      <footer style={theme.footer}>
         Powered by{" "}
         <a target="_new" href="https://dog.ceo/dog-api/documentation/">
           Dog API.
