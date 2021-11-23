@@ -10,6 +10,7 @@
 - [ ] Render props
 - [ ] Custom hooks
 - [ ] Error boundaries
+  - Should be added to each Layout component
 - [ ] React Suspense
 
 ### Draft User Stories

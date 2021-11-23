@@ -3,7 +3,7 @@ import "./style.css";
 import { SearchResults } from "./components";
 import { getAllPups } from "../../api/config";
 
-export const Search = () => {
+export const Search = (props) => {
   const [pups, setPups] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const inputRef = useRef(null);

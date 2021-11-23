@@ -3,7 +3,8 @@ export const config = {
   baseUrl: "https://dog.ceo/api/",
 };
 
-// base helper functions
+// base helper functions, expand to include
+// other CRUD ops, auth, etc.
 export const getRequest = async ({ url }) => {
   return await axios.get(`${config.baseUrl}${url}`);
 };
@@ -33,5 +34,26 @@ export const getAllPups = async ({ cb }) => {
     if (cb) {
       cb(formattedData);
     }
+    return formattedData;
+  }
+};
+
+function getBreedFromUrl(url) {
+  var newStr = url.replace("https://images.dog.ceo/breeds/", "");
+  var slashIndex = newStr.indexOf("/");
+  return newStr.slice(0, slashIndex);
+}
+export const getSinglePup = async ({ cb }) => {
+  const url = "breeds/image/random";
+  const { data } = await getRequest({ url });
+  if (data) {
+    const payload = {
+      breed: getBreedFromUrl(data.message),
+      imageUrl: data.message,
+    };
+    if (cb) {
+      cb(payload);
+    }
+    return payload;
   }
 };
