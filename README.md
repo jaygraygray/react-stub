@@ -2,7 +2,7 @@
 
 - [ ] Responsive / mobile friendly UI
 - [ ] Data fetching
-- [ ] Higher Order Component
+- [x] Higher Order Component
   - `src/ThemedApp.js`
 - [ ] Render props
 - [ ] Custom hooks

@@ -19,7 +19,7 @@ const colors = {
   },
 };
 
-const theme = {
+const theme = Object.freeze({
   app: {
     display: "grid",
     height: "100vh",
@@ -52,7 +52,7 @@ const theme = {
     background: colors.background.footer,
     padding: padding.footer,
   },
-};
+});
 
 const WithTheme = (props) => {
   return <App theme={theme} {...props} />;
